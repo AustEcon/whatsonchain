@@ -6,13 +6,13 @@ DEFAULT_TIMEOUT = 10
 
 class Whatsonchain:
     """
-    Implements Whatsonchain API as per: https://developers.whatsonchain.com/
+    Access to the Whatsonchain API as per: https://developers.whatsonchain.com/
 
     :param network: select 'main', 'test', or 'stn'
     :type network: ``str``
     """
 
-    def __init__(self, api_key, network='main'):
+    def __init__(self, network='main', api_key=None):
         self.api_key = api_key
         self.network = network
         self.headers = self._get_headers()
@@ -114,7 +114,7 @@ class Whatsonchain:
 
     # Address
     def get_address_info(self, address):
-        r = requests.get('https: // api.whatsonchain.com/v1/bsv/{}/address/{}/info'.format(self.network, address),
+        r = requests.get('https://api.whatsonchain.com/v1/bsv/{}/address/{}/info'.format(self.network, address),
                          headers=self.headers,
                          timeout=DEFAULT_TIMEOUT)
         r.raise_for_status()

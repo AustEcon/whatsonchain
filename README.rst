@@ -4,11 +4,19 @@ Whatsonchain API
 Examples
 --------
 
-1. Import whatsonchain:
+1. Import whatsonchain and create a 'woc' object for 'main', 'test' or 'stn' networks:
 
 .. code-block:: python
 
-    >>> import whatsonchain
+    >>> from whatsonchain import Whatsonchain
+    >>> woc = Whatsonchain(network='test')
+    >>> woc.get_address_info('mtsCNJGDVgYaVm3je8UpU5nExgiJgkEv6y')
+    {'address': 'mtsCNJGDVgYaVm3je8UpU5nExgiJgkEv6y',
+     'ismine': False,
+     'isscript': False,
+     'isvalid': True,
+     'iswatchonly': False,
+     'scriptPubKey': '76a914926db3be60d18dbaac65785b92a150c37bb4146488ac'}
 
 
 Installation
@@ -26,6 +34,8 @@ Credits
 -------
 
 - `Whatsonchain`_ for their hard work on the Whatsonchain API
+
+.. _Whatsonchain: https://whatsonchain.com/
 
 Donate
 --------
