@@ -1,7 +1,7 @@
 import json
 import requests
 
-DEFAULT_TIMEOUT = 10
+DEFAULT_TIMEOUT = 30
 
 
 class Whatsonchain:
@@ -36,7 +36,7 @@ class Whatsonchain:
                          headers=self.headers,
                          timeout=DEFAULT_TIMEOUT)
         r.raise_for_status()
-        return r.json()
+        return r.text
 
     # Chain info
     def get_chain_info(self):
