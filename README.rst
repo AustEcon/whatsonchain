@@ -8,7 +8,7 @@ Examples
 
 .. code-block:: python
 
-    >>> from whatsonchain import Whatsonchain
+    >>> from whatsonchain.api import Whatsonchain
     >>> woc = Whatsonchain(network='test')
     >>> woc.get_address_info('mtsCNJGDVgYaVm3je8UpU5nExgiJgkEv6y')
     {'address': 'mtsCNJGDVgYaVm3je8UpU5nExgiJgkEv6y',
